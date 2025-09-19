@@ -1,0 +1,46 @@
+{
+  "window.zoomLevel": 1,
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.statusBar.visible": true,
+  "workbench.sideBar.location": "left",
+  "files.autoSave": "afterDelay",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "javascript.validate.enable": false,
+  "typescript.validate.enable": false,
+  "standard.enable": true,
+  "standard.autoFixOnSave": true,
+  "standard.validate": [
+    {
+      "language": "javascript",
+      "autoFix": true
+    },
+    {
+      "language": "javascriptreact",
+      "autoFix": true
+    }
+  ],
+  "editor.tabSize": 2,
+  "editor.renderWhitespace": "all",
+  "editor.minimap.enabled": true,
+  "editor.renderControlCharacters": false,
+  "editor.renderFinalNewline": "on",
+  "editor.rulers": [
+    120
+  ],
+  "editor.multiCursorModifier": "alt",
+  "editor.autoIndent": "full",
+  "editor.detectIndentation": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "javascript.format.insertSpaceAfterConstructor": true,
+  "breadcrumbs.enabled": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "cSpell.words": [],
+}

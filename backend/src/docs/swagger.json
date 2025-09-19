@@ -1,0 +1,172 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Transcription API",
+    "version": "1.0.0",
+    "description": "API documentation for the Transcription Service (with demo endpoint)."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3001/api/v1",
+      "description": "Local development server"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "Demo": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number",
+            "example": 1
+          },
+          "message": {
+            "type": "string",
+            "example": "Hello from demo service!"
+          }
+        }
+      },
+      "TranscriptionInput": {
+        "type": "object",
+        "properties": {
+          "audioUrl": {
+            "type": "string",
+            "example": "https://example.com/sample.mp3"
+          }
+        },
+        "required": ["audioUrl"]
+      },
+      "CreateTranscription": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "650f1c2b5f1a4e23d4c9a8b7"
+          }
+        }
+      },
+      "Transcription": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "example": "650f1c2b5f1a4e23d4c9a8b7"
+          },
+          "audioUrl": {
+            "type": "string",
+            "example": "https://example.com/sample.mp3"
+          },
+          "transcription": {
+            "type": "string",
+            "example": "dummy transcription"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "parameters": {
+      "page": {
+        "name": "page",
+        "in": "query",
+        "required": true,
+        "schema": {
+          "type": "number"
+        }
+      },
+      "limit": {
+        "name": "limit",
+        "in": "query",
+        "required": true,
+        "schema": {
+          "type": "number"
+        }
+      }
+    }
+  },
+  "paths": {
+    "/demo": {
+      "get": {
+        "summary": "Get demo response (for testing purposes)",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Demo"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found"
+          }
+        }
+      }
+    },
+    "/audio-transcription/create": {
+      "post": {
+        "summary": "Create a new transcription from an audio file",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TranscriptionInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Transcription created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateTranscription"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/audio-transcription/list": {
+      "get": {
+        "summary": "List all transcriptions",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/page"
+          },
+          {
+            "$ref": "#/components/parameters/limit"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of transcriptions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Transcription"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

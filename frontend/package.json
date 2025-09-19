@@ -1,0 +1,79 @@
+{
+  "name": "Audio TranscriptionApp Frontend",
+  "version": "0.1.0",
+  "private": true,
+  "author": {
+    "name": "Shubham Gupta",
+    "email": "shubhamgupta9891@gmail.com",
+    "url": "https://shubh1998.github.io"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "prepare": "husky install",
+    "lint": "standard",
+    "lint:fix": "standard --fix src/**/*.{js,jsx}"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "1.7.1",
+    "axios": "1.11.0",
+    "formik": "2.2.9",
+    "lodash": "4.17.21",
+    "react": "17.0.2",
+    "react-csv": "^2.2.2",
+    "react-dom": "17.0.2",
+    "react-redux": "7.2.4",
+    "react-router-dom": "5.2.0",
+    "react-scripts": "5.0.1",
+    "react-spinners": "0.13.7",
+    "react-toastify": "^9.1.1",
+    "yup": "0.32.9"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.17.6",
+    "@babel/core": "7.17.5",
+    "@babel/eslint-parser": "7.17.0",
+    "@babel/preset-react": "7.16.7",
+    "husky": "7.0.4",
+    "lint-staged": "12.1.2",
+    "standard": "16.0.4"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "npm run lint:fix",
+      "npm run lint"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ]
+  },
+  "standard": {
+    "parser": "@babel/eslint-parser",
+    "env": {
+      "jest": true,
+      "browser": true
+    },
+    "globals": [],
+    "ignore": [
+      "build/*",
+      "public",
+      "node_modules"
+    ]
+  },
+  "eslintConfig": {},
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

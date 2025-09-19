@@ -1,0 +1,70 @@
+{
+  "name": "Audio Transcription App Backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./src/index.js",
+    "prepare": "husky install",
+    "lint": "standard",
+    "lint:fix": "standard --fix src/**/*.{js,jsx}"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Shubham Gupta",
+    "email": "shubhamgupta9891@gmail.com",
+    "url": "https://shubh1998.github.io"
+  },
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@babel/preset-env": "7.28.3",
+    "cors": "2.8.5",
+    "dotenv": "17.2.2",
+    "express": "5.1.0",
+    "joi": "17.13.3",
+    "mongoose": "8.18.0",
+    "morgan": "1.10.1",
+    "nodemon": "3.1.10",
+    "uuid": "9.0.0",
+    "swagger-ui-express": "4.6.3",
+    "swagger-jsdoc": "6.2.8"
+  },
+  "devDependencies": {
+    "@babel/core": "7.28.4",
+    "@babel/eslint-parser": "7.28.4",
+    "husky": "7.0.4",
+    "lint-staged": "12.1.2",
+    "standard": "16.0.4"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "npm run lint:fix",
+      "npm run lint"
+    ]
+  },
+  "standard": {
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+      "requireConfigFile": false,
+      "babelOptions": {
+        "presets": [
+          "@babel/preset-env"
+        ]
+      }
+    },
+    "env": [
+      "node",
+      "jest"
+    ],
+    "ignore": [
+      "build/*",
+      "public",
+      "node_modules"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  }
+}
